@@ -3,16 +3,23 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import {HeroModuleModule} from './hero-module/hero-module.module';
+import {ErrorPageComponent} from './error-page-component/error-page-component.component';
+import {HeroService} from './hero-module/hero-service/hero.service';
+import {CrisisModuleModule} from './crisis-module/crisis-module.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ErrorPageComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HeroModuleModule,
+    CrisisModuleModule
   ],
-  providers: [],
+  providers: [HeroService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
